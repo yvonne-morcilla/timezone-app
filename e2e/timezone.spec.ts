@@ -1,3 +1,10 @@
+// NOTE: 3 tests in this suite are expected to fail against the current
+// implementation. They assert the CORRECT behavior per the product spec
+// (sort-by-time, You row cannot be deleted, duplicate labels don't cross-delete),
+// and their failures directly correspond to bugs filed in the Issues tab
+// (BUG-1, BUG-2, BUG-4). This is intentional: the tests document expected
+// behavior rather than being adjusted to pass against known-buggy code.
+
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
