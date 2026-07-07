@@ -24,7 +24,7 @@ test.describe('Time Keeper — adding timezones', () => {
     await page.getByRole('button', { name: 'Save' }).click();
 
     await expect(page.locator('tbody tr')).toHaveCount(2);
-    await expect(page.getByText('Europe HQ')).toBeVisible();
+    await expect(page.getByText('Europe HQ', { exact: true })).toBeVisible();
   });
 
   test('does not add a row when the label is missing', async ({ page }) => {
